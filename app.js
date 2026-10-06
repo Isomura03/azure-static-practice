@@ -113,3 +113,12 @@ clearDoneButton.addEventListener("click", () => {
 
 // 最初に1回画面を描く
 render();
+const apiButton = document.getElementById("api-test-button");
+const apiResult = document.getElementById("api-result");
+
+apiButton.addEventListener("click", async () => {
+  const response = await fetch("/api/hello?name=Yuta");
+  const message = await response.text();
+
+  apiResult.textContent = message;
+});
