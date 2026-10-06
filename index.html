@@ -2,10 +2,30 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Azure Static Web Apps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todoアプリ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello Azure Static Web Apps!</h1>
-  <p>GitHubからAzureへ自動デプロイして。</p>
+  <main class="container">
+    <h1>Todoアプリ</h1>
+
+    <!-- Todoを追加するフォーム -->
+    <form id="todo-form" class="todo-form">
+      <input id="todo-input" type="text" placeholder="やることを入力" autocomplete="off" required>
+      <button type="submit">追加</button>
+    </form>
+
+    <!-- Todoの一覧（app.js が中身を作ります） -->
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <!-- 残りの件数と、完了済みをまとめて消すボタン -->
+    <footer class="todo-footer">
+      <span id="todo-count"></span>
+      <button id="clear-done" type="button">完了済みを削除</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>

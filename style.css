@@ -1,0 +1,122 @@
+/* 色をまとめて定義（変えたいときはここだけ直せばOK） */
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --text: #222222;
+  --muted: #888888;
+  --accent: #2f6fed;
+  --danger: #d9534f;
+  --border: #e2e4e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 24px 16px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* 入力フォーム */
+.todo-form {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* Todo一覧 */
+.todo-list {
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.todo-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.todo-item .text {
+  flex: 1;
+  word-break: break-word;
+}
+
+/* 完了したTodoは取り消し線＋薄い色 */
+.todo-item.done .text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.todo-item .delete {
+  padding: 4px 10px;
+  background: var(--danger);
+}
+
+.empty {
+  padding: 16px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* 下部の件数表示 */
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.todo-footer button {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
